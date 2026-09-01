@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Travel Explorer — Packages</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        Travel<span>Explorer</span>
+      </a>
+
+      <button id="nav-toggle-2" class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav" id="main-nav-2">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="destinations.html" class="nav-link">Destinations</a></li>
+          <li><a href="packages.html" class="nav-link active">Packages</a></li>
+          <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Packages Section -->
+  <section class="section container">
+    <h1 class="section-title">Travel Packages</h1>
+    <p class="section-sub">Flexible packages for every budget.</p>
+
+    <div class="grid grid-3 gap">
+
+      <!-- Basic -->
+      <div class="package">
+        <h3>Basic Package</h3>
+        <p class="muted">3 Days / 2 Nights</p>
+        <p class="price">₹12,999</p>
+
+        <ul class="features">
+          <li>Hotel stay</li>
+          <li>City tour</li>
+          <li>Breakfast</li>
+        </ul>
+
+        <div class="card-actions">
+          <button class="btn btn-primary" data-open-book="Basic Package">
+            Book Now
+          </button>
+        </div>
+      </div>
+
+      <!-- Premium -->
+      <div class="package">
+        <h3>Premium Package</h3>
+        <p class="muted">5 Days / 4 Nights</p>
+        <p class="price">₹29,999</p>
+
+        <ul class="features">
+          <li>Resort stay</li>
+          <li>Full tour</li>
+          <li>All meals</li>
+        </ul>
+
+        <div class="card-actions">
+          <button class="btn btn-primary" data-open-book="Premium Package">
+            Book Now
+          </button>
+        </div>
+      </div>
+
+      <!-- Luxury -->
+      <div class="package">
+        <h3>Luxury Package</h3>
+        <p class="muted">7 Days / 6 Nights</p>
+        <p class="price">₹59,999</p>
+
+        <ul class="features">
+          <li>Private villa</li>
+          <li>Private guide</li>
+          <li>Spa access</li>
+        </ul>
+
+        <div class="card-actions">
+          <button class="btn btn-primary" data-open-book="Luxury Package">
+            Book Now
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Booking Modal -->
+  <div id="booking-modal" class="modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <button class="modal-close" data-close>&times;</button>
+
+      <h3>
+        Book: <span id="book-title-2">Package</span>
+      </h3>
+
+      <form id="booking-form-2" class="form">
+        <label>
+          <input required name="name" placeholder="Full name">
+        </label>
+
+        <label>
+          <input required type="email" name="email" placeholder="Email">
+        </label>
+
+        <label>
+          <input name="phone" placeholder="Phone (optional)">
+        </label>
+
+        <label>
+          <textarea name="notes" placeholder="Notes"></textarea>
+        </label>
+
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary">
+            Submit Booking
+          </button>
+          <button type="button" class="btn btn-outline" data-close>
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+
+      <div class="footer-col">
+        <h4>Travel Explorer</h4>
+        <p>Plan your next great escape with us.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <p>info@travelexplorer.com</p>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      &copy; <span id="year3"></span> Travel Explorer.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

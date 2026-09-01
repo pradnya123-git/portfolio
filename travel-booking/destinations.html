@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Travel Explorer — Destinations</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- same header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">Travel<span>Explorer</span></a>
+      <button id="nav-toggle-2" class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="main-nav-2">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="destinations.html" class="nav-link active">Destinations</a></li>
+          <li><a href="packages.html" class="nav-link">Packages</a></li>
+          <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <section class="section container">
+    <h1 class="section-title">Destinations</h1>
+    <p class="section-sub">Discover beaches, mountains, and cities.</p>
+
+    <div class="grid grid-3 gap">
+      <!-- example destination cards -->
+      <article class="dest-card">
+        <img src="bali.jpg" alt="">
+        <div class="dest-body">
+          <h3>Bali, Indonesia</h3>
+          <p>Culture, surf, rice terraces and relaxing retreats.</p>
+          <div class="dest-actions">
+            <a href="#" class="btn btn-sm" data-open-modal="bali">View More</a>
+            <button class="btn btn-outline" data-open-book="Bali Package">Book</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="dest-card">
+        <img src="Iceland.jpg" alt="">
+        <div class="dest-body">
+          <h3>Iceland</h3>
+          <p>Glaciers, hot springs, aurora and volcanic landscapes.</p>
+          <div class="dest-actions">
+            <a href="#" class="btn btn-sm" data-open-modal="iceland">View More</a>
+            <button class="btn btn-outline" data-open-book="Iceland Package">Book</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="dest-card">
+        <img src="paris.jpg" alt="">
+        <div class="dest-body">
+          <h3>Paris, France</h3>
+          <p>Art, architecture and world-class cuisine.</p>
+          <div class="dest-actions">
+            <a href="#" class="btn btn-sm" data-open-modal="paris">View More</a>
+            <button class="btn btn-outline" data-open-book="Paris Package">Book</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- add more cards as desired -->
+    </div>
+  </section>
+
+  <!-- simple modal for destination details (can be reused) -->
+  <div id="info-modal" class="modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <button class="modal-close" data-close>&times;</button>
+      <div id="info-content">
+        <!-- JS will populate -->
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h4>Travel Explorer</h4>
+        <p>Plan your next great escape with us.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="packages.html">Packages</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <p>info@travelexplorer.com<br />+91 98765 43210</p>
+      </div>
+    </div>
+    <div class="copyright">&copy; <span id="year2"></span> Travel Explorer.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

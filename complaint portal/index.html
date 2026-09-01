@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DYP Student Portal | AI Enhanced</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+ 
+  <body>
+    <div class="app-container">
+      <div class="header">
+        <div style="font-weight: 800; font-size: 1.3rem">
+          DYP <span style="font-weight: 300; opacity: 0.7"> Complaint Portal</span>
+        </div>
+        <div class="nav-pills">
+          <button class="pill active" onclick="setView('st-login')">
+            Login
+          </button>
+          <button class="pill" onclick="setView('st-signup')">Sign Up</button>
+          <button class="pill" onclick="setView('ad-login')">Admin</button>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div id="st-signup" class="view hidden">
+          <h2 style="margin-bottom: 30px">Create Account</h2>
+          <form id="signupForm">
+            <div class="input-grid">
+              <div class="field">
+                <label>Full Name</label
+                ><input
+                  type="text"
+                  id="regName"
+                  placeholder="Enter Full Name"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label>PRN Number</label
+                ><input
+                  type="text"
+                  id="regPrn"
+                  placeholder="Enter PRN"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label>Set Password</label
+                ><input
+                  type="password"
+                  id="regPass"
+                  placeholder="Choose Password"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label>Email</label
+                ><input
+                  type="email"
+                  id="regEmail"
+                  placeholder="student@dyp.edu"
+                  required
+                />
+              </div>
+            </div>
+            <button type="submit" class="btn-action">
+              Register & Continue
+            </button>
+          </form>
+        </div>
+
+        <div id="st-login" class="view">
+          <div style="max-width: 400px; margin: 40px auto; text-align: center">
+            <h2 style="margin-bottom: 10px">Welcome Back</h2>
+            <p style="color: #64748b; margin-bottom: 30px">
+              Enter your credentials to track complaints
+            </p>
+            <div class="field" style="text-align: left">
+              <label>PRN Number</label><input type="text" id="logPrn" />
+            </div>
+            <div class="field" style="text-align: left">
+              <label>Password</label><input type="password" id="logPass" />
+            </div>
+            <button class="btn-action" onclick="loginStudent()">Sign In</button>
+          </div>
+        </div>
+
+        <div id="st-profile" class="view hidden">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              margin-bottom: 30px;
+            "
+          >
+            <h2 id="welcomeText">Student Dashboard</h2>
+            <button
+              onclick="logout()"
+              style="
+                color: var(--accent);
+                font-weight: 700;
+                border: none;
+                background: none;
+                cursor: pointer;
+              "
+            >
+              Logout
+            </button>
+          </div>
+
+          <div
+            style="
+              background: white;
+              border: 2px solid #f1f5f9;
+              padding: 30px;
+              border-radius: 24px;
+              margin-bottom: 40px;
+            "
+          >
+            <h3>Submit New Complaint</h3>
+            <div class="field">
+              <label>Academic Stream</label>
+              <select id="sStream">
+                <option>MCA - Sandwitch</option>
+                <option>MCA</option>
+                <option>MBA</option>
+                <option>MBA-AMB</option>
+                <option>BBA</option>
+                <option>BCA</option>
+                <option>BCS</option>
+                <option>BSC-CS</option>
+                <option>BSC-Data Science</option>
+                <option>B-TECH</option>
+                <option>B-TECH AGRI</option>
+                <option>FOOD TECH</option>
+                <option>Computer Engineering</option>
+                <option>Information Technology</option>
+                <option>Mechanical Engineering</option>
+                <option>Civil Engineering</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Describe Issue</label>
+              <textarea
+                id="sIssue"
+                rows="4"
+                placeholder="Briefly describe your problem..."
+              ></textarea>
+              <button
+                type="button"
+                onclick="openAI()"
+                style="
+                  margin-top: 10px;
+                  width: fit-content;
+                  background: var(--ai-purple);
+                  color: white;
+                  border: none;
+                  padding: 8px 15px;
+                  border-radius: 10px;
+                  cursor: pointer;
+                  font-weight: 600;
+                "
+              >
+                ✨ Get AI Suggestions
+              </button>
+            </div>
+            <button
+              class="btn-action"
+              style="background: var(--accent)"
+              onclick="submitComplaint()"
+            >
+              Submit Official Complaint
+            </button>
+          </div>
+
+          <h3>My Tracking History</h3>
+          <div id="myHistory"></div>
+        </div>
+
+        <div id="ad-login" class="view hidden">
+          <div style="max-width: 400px; margin: 60px auto; text-align: center">
+            <h2>Admin Gateway</h2>
+            <div class="field" style="text-align: left">
+              <label>Access Key</label
+              ><input
+                type="password"
+                id="adminKey"
+                placeholder="Verify identity"
+              />
+            </div>
+            <button class="btn-action" onclick="loginAdmin()">
+              Enter Dashboard
+            </button>
+          </div>
+        </div>
+
+        <div id="ad-dash" class="view hidden">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              margin-bottom: 20px;
+            "
+          >
+            <h2>Admin Control</h2>
+            <button
+              onclick="logout()"
+              style="
+                color: red;
+                font-weight: 700;
+                border: none;
+                background: none;
+                cursor: pointer;
+              "
+            >
+              Exit
+            </button>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th style="padding: 10px">Student</th>
+                <th>Stream</th>
+                <th>Issue</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="adminTable"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div id="aiModal" class="modal-overlay">
+      <div class="ai-modal">
+        <h3 style="margin-top: 0">✨ AI Professional Refinement</h3>
+        <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 20px">
+          Choose a professional version of your complaint:
+        </p>
+
+        <div class="ai-option" onclick="selectAI(1)">
+          <h4>Option 1: Formal & Concise</h4>
+          <p
+            id="opt1"
+            style="margin: 0; font-size: 0.9rem; line-height: 1.4"
+          ></p>
+        </div>
+
+        <div class="ai-option" onclick="selectAI(2)">
+          <h4>Option 2: Detailed & Urgent</h4>
+          <p
+            id="opt2"
+            style="margin: 0; font-size: 0.9rem; line-height: 1.4"
+          ></p>
+        </div>
+
+        <button
+          onclick="closeAI()"
+          style="
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background: #f1f5f9;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+          "
+        >
+          Keep My Original Version
+        </button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    </body>
+</html>
+

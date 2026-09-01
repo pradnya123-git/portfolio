@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Travel Explorer — Contact</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        Travel<span>Explorer</span>
+      </a>
+
+      <button id="nav-toggle-6" class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav" id="main-nav-6">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="destinations.html" class="nav-link">Destinations</a></li>
+          <li><a href="packages.html" class="nav-link">Packages</a></li>
+          <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="section container">
+    <h1 class="section-title">Contact Us</h1>
+    <p class="section-sub">
+      Have questions or need help planning your trip? We’re here for you.
+    </p>
+
+    <div class="grid grid-2 gap">
+
+      <!-- Contact Form -->
+      <form
+        action="https://formspree.io/f/YOUR_FORM_ID"
+        method="POST"
+        class="form"
+        autocomplete="on"
+      >
+
+        <label>
+          <input
+            type="text"
+            name="name"
+            placeholder="Full Name"
+            required
+            autocomplete="name"
+          />
+        </label>
+
+        <label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            required
+            autocomplete="email"
+          />
+        </label>
+
+        <label>
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Phone Number"
+            pattern="[0-9]{10}"
+            title="Enter a 10-digit phone number"
+          />
+        </label>
+        <br>
+        <br>
+        <label>
+          <textarea
+            name="message"
+            placeholder="Tell us about your travel plans..."
+            required
+            rows="5"
+          ></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">
+            Send Message
+          </button>
+        </div>
+
+      </form>
+
+      <!-- Contact Info -->
+      <div>
+        <h3>Office</h3>
+        <p>
+          Travel Explorer<br />
+          Mumbai, India
+        </p>
+
+        <p>
+          Email: info@travelexplorer.com<br />
+          Phone: +91 98765 43210
+        </p>
+
+        <h3>Find us</h3>
+
+        <!-- Google Maps -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.1160907978!2d72.74109950251305!3d19.08219783984652!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63e3f3f29d3%3A0x2b7bb0d3d1c1a2d1!2sMumbai%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sin!4v1600000000000"
+          width="100%"
+          height="250"
+          style="border:0;"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+
+      <div class="footer-col">
+        <h4>Travel Explorer</h4>
+        <p>Plan your next great escape with us.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <p>info@travelexplorer.com</p>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      &copy; <span id="year6"></span> Travel Explorer.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

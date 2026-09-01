@@ -1,0 +1,559 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --bg: #f7f4f1;
+    --primary: #d98c58;
+    --primary-dark: #b96f3c;
+    --text: #222;
+    --white: #ffffff;
+    --card-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    --glass: rgba(255, 255, 255, 0.12);
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* COMMON SECTION SPACING */
+section {
+    padding: 90px 10%;
+}
+
+/* HEADER */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 18px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.logo {
+    color: #e6a06b;
+    font-size: 24px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.navbar a {
+    color: #f3c8a5;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #fff;
+}
+
+/* HOME */
+.home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 120px 10% 60px;
+    background:
+        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+        url("images/logo.png") center/cover no-repeat;
+    color: white;
+}
+
+.home-content {
+    max-width: 650px;
+}
+
+.home h3 {
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.home h1 {
+    font-size: 64px;
+    line-height: 1.1;
+    margin: 12px 0;
+}
+
+.home span {
+    color: #f0b487;
+}
+
+.home p {
+    margin: 20px 0;
+    font-size: 18px;
+    max-width: 550px;
+}
+
+/* BUTTONS */
+.btn,
+.project-btn,
+.contact button {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #d98c58, #f0b487);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 500;
+    transition: 0.3s ease;
+    box-shadow: 0 8px 20px rgba(217, 140, 88, 0.28);
+    cursor: pointer;
+}
+
+.btn:hover,
+.project-btn:hover,
+.contact button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(217, 140, 88, 0.35);
+}
+
+/* HEADINGS */
+.heading {
+    text-align: center;
+    font-size: 38px;
+    color: #8a4f23;
+    margin-bottom: 35px;
+}
+
+/* CARD STYLE */
+.about-card,
+.stat-card,
+.edu-card,
+.skill-card,
+.project-card,
+.intern-card,
+.contact form {
+    background: white;
+    border-radius: 18px;
+    box-shadow: var(--card-shadow);
+}
+
+/* ABOUT */
+.about {
+    padding-top: 100px;
+}
+
+.about-card {
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px;
+}
+
+.about-card h2 {
+    color: #8a4f23;
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+.about-card p {
+    font-size: 17px;
+    color: #444;
+}
+
+/* SOCIAL */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin: 25px 0;
+    flex-wrap: wrap;
+}
+
+.social-icons a {
+    display: inline-flex;
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: white;
+    color: var(--primary);
+    font-size: 24px;
+    transition: .3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .08);
+}
+
+.social-icons a:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* STATS */
+.stats {
+    padding: 30px 10% 70px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(180px, 1fr));
+    gap: 20px;
+    align-items: stretch;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 28px 20px;
+}
+
+.stat-card i {
+    color: var(--primary);
+    font-size: 42px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.stat-card h2 {
+    font-size: 28px;
+    color: #8a4f23;
+}
+
+.stat-card p {
+    color: #555;
+}
+
+/* GRID SECTIONS */
+.education-container,
+.skills-container,
+.project-container,
+.Internship-container,
+.Internships-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
+
+/* EDUCATION */
+.edu-card {
+    padding: 24px;
+}
+
+.edu-card h3 {
+    color: #8a4f23;
+    margin-bottom: 10px;
+}
+
+.edu-card p {
+    color: #444;
+    margin-bottom: 6px;
+}
+
+/* SKILLS */
+.skill-card {
+    padding: 24px;
+    transition: 0.3s;
+}
+
+.skill-card:hover,
+.project-card:hover,
+.intern-card:hover,
+.edu-card:hover {
+    transform: translateY(-6px);
+}
+
+.skill-card h3 {
+    color: #8a4f23;
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    color: #444;
+}
+
+/* PROJECTS */
+.project-card {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card h3 {
+    color: #8a4f23;
+    margin-bottom: 12px;
+    font-size: 22px;
+}
+
+.project-card p {
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.project-card h4 {
+    margin-top: 8px;
+    color: #333;
+    font-size: 16px;
+}
+
+.project-btn {
+    margin-top: 15px;
+    align-self: flex-start;
+}
+
+/* INTERNSHIP */
+.intern-card {
+    padding: 24px;
+}
+
+.intern-card h3 {
+    color: #8a4f23;
+    margin-bottom: 12px;
+}
+
+.intern-card p {
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.intern-card h4,
+.intern-card strong {
+    color: #333;
+}
+
+/* CONTACT */
+.contact form {
+    max-width: 700px;
+    margin: auto;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    outline: none;
+    font-size: 15px;
+}
+
+.contact textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+#formMessage {
+    font-size: 14px;
+    color: #8a4f23;
+}
+
+/* FOOTER */
+footer {
+    background: #1f1f1f;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+footer h3 {
+    margin-bottom: 10px;
+    color: #f0b487;
+}
+
+footer p {
+    margin: 6px 0;
+    color: #ddd;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* Large tablets */
+@media (max-width: 992px) {
+    .header {
+        padding: 16px 6%;
+    }
+
+    section {
+        padding: 80px 6%;
+    }
+
+    .home {
+        padding: 120px 6% 60px;
+    }
+
+    .home h1 {
+        font-size: 52px;
+    }
+
+    .home h3 {
+        font-size: 24px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 20px 6% 60px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 12px;
+        padding: 14px 5%;
+    }
+
+    .logo {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .navbar {
+        justify-content: center;
+        gap: 14px;
+    }
+
+    .navbar a {
+        font-size: 14px;
+    }
+
+    .home {
+        min-height: auto;
+        padding: 160px 5% 70px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .home-content {
+        max-width: 100%;
+    }
+
+    .home h1 {
+        font-size: 42px;
+    }
+
+    .home h3 {
+        font-size: 22px;
+    }
+
+    .home p {
+        font-size: 16px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+        padding: 10px 5% 50px;
+    }
+
+    .heading {
+        font-size: 32px;
+    }
+
+    .about-card,
+    .contact form {
+        padding: 22px;
+    }
+
+    .education-container,
+    .skills-container,
+    .project-container,
+    .Internship-container,
+    .Internships-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .header {
+        padding: 12px 4%;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .navbar {
+        gap: 10px;
+    }
+
+    .navbar a {
+        font-size: 13px;
+    }
+
+    section {
+        padding: 70px 4%;
+    }
+
+    .home {
+        padding: 170px 4% 60px;
+    }
+
+    .home h1 {
+        font-size: 34px;
+    }
+
+    .home h3 {
+        font-size: 18px;
+    }
+
+    .home p {
+        font-size: 15px;
+    }
+
+    .heading {
+        font-size: 28px;
+    }
+
+    .project-btn,
+    .btn,
+    .contact button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .stat-card {
+        padding: 22px 16px;
+    }
+
+    .about-card,
+    .edu-card,
+    .skill-card,
+    .project-card,
+    .intern-card,
+    .contact form {
+        padding: 20px;
+    }
+}

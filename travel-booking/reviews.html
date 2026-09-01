@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Travel Explorer — Reviews</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Same Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">Travel<span>Explorer</span></a>
+
+      <button id="nav-toggle-2" class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="main-nav-2">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="destinations.html" class="nav-link">Destinations</a></li>
+          <li><a href="packages.html" class="nav-link">Packages</a></li>
+          <li><a href="reviews.html" class="nav-link active">Reviews</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Reviews Section -->
+  <section class="section container">
+    <h1 class="section-title">Traveller Reviews</h1>
+    <p class="section-sub">Real experiences from people who travelled with us.</p>
+
+    <div class="grid grid-3 gap">
+
+      <!-- Review Card -->
+      <article class="card">
+        <div class="card-body center">
+          <img src="https://source.unsplash.com/100x100/?woman,portrait" class="avatar" alt="">
+          <h3>Asha K.</h3>
+          <div class="stars">★★★★★</div>
+          <p>Amazing Maldives trip! Everything was perfectly planned and stress-free.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body center">
+          <img src="https://source.unsplash.com/100x100/?man,portrait" class="avatar" alt="">
+          <h3>Ravi S.</h3>
+          <div class="stars">★★★★★</div>
+          <p>Swiss holiday was unforgettable. Hotels and transport were excellent.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body center">
+          <img src="https://source.unsplash.com/100x100/?girl,portrait" class="avatar" alt="">
+          <h3>Priya M.</h3>
+          <div class="stars">★★★★★</div>
+          <p>Perfect family trip. Friendly staff and great value for money.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section section-alt container">
+    <h2 class="section-title">FAQs</h2>
+    <p class="section-sub">Quick answers to common questions.</p>
+
+    <div class="accordion">
+
+      <div class="accordion-item">
+        <input type="checkbox" id="faq1">
+        <label for="faq1">What is your cancellation policy?</label>
+        <div class="panel">
+          Cancel up to 14 days before departure for a full refund.
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <input type="checkbox" id="faq2">
+        <label for="faq2">Do you provide travel insurance?</label>
+        <div class="panel">
+          Yes, optional insurance is available during booking.
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <input type="checkbox" id="faq3">
+        <label for="faq3">Can I customize my package?</label>
+        <div class="panel">
+          Absolutely! Contact us for a custom itinerary.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Same Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h4>Travel Explorer</h4>
+        <p>Plan your next great escape with us.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="packages.html">Packages</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <p>info@travelexplorer.com<br>+91 98765 43210</p>
+      </div>
+    </div>
+
+    <div class="copyright">
+      &copy; <span id="year2"></span> Travel Explorer.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

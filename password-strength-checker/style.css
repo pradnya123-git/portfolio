@@ -1,0 +1,83 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg,#667eea,#764ba2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: 0.3s;
+}
+
+.container{
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+
+}
+
+h2{
+    margin-bottom: 15px;
+}
+
+.input-box{
+    position: relative;
+}
+
+input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    outline: none;
+}
+
+#toggle{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.strength{
+    height: 8px;
+    background: #eee;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+#bar{
+    height: 100%;
+    width: 0%;
+    border-radius: 10px;
+    transition: 0.3s;
+
+}
+
+.checklist{
+    text-align: left;
+    font-size: 14px;
+}
+
+.button button{
+    margin: 5px;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 8px;
+    background: #667eea;
+    color: white;
+    cursor: pointer;
+}
+
+.button button:hover{
+    background:#5a67d8 ;
+
+}
+
+.dark{
+    background:#1a202c ;
+}
+.dark.container{
+    background: #2d3748;
+    color: white;
+}
